@@ -20,6 +20,14 @@ body {
   box-sizing: inherit;
 }
 
-#preloader {
-	display: none;
+a:hover, a:visited, a:link, a:active {
+  transition: none;
+  text-decoration: none;
+  color: #fff;
+}
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

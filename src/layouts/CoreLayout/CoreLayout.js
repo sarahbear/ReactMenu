@@ -7,16 +7,9 @@ import 'static/style/core.scss'
 import 'static/style/_base.scss'
 import './CoreLayout.scss'
 
-
 class CoreLayout extends React.Component {
   constructor (props) {
     super(props)
-  }
-
-  onCollapseChange () {
-    this.setState({
-      collapse: !this.state.collapse
-    })
   }
 
   render () {

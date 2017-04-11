@@ -10,14 +10,6 @@ $layoutColor: #20252c;
   height: 64px;
 }
 
-
-a {
-  transition: none;
-  text-decoration: none;
-}
-a:focus {
-  text-decoration: none;
-}
 .menu-dark, .menu-dark .menu-sub {
   color: none;
   background-color: rgba(28, 43, 54, 1);

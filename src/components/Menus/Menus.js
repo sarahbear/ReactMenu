@@ -1,4 +1,6 @@
 import React from 'react'
+
+import SubMenu from './SubMenu'
 import './Menus.scss'
 
 class Menus extends React.Component {
@@ -6,8 +8,15 @@ class Menus extends React.Component {
   state = {
     checkedKeys: []
   }
-  onChange = (key) => {
-    this.setState({ key })
+
+  onChange = (keys) => {
+    this.setState({ checkedKeys: keys })
+  }
+
+  onCheckAllChange = (e) => {
+    this.setState({
+      checkedKeys: []
+    });
   }
 
   render () {
@@ -18,19 +27,11 @@ class Menus extends React.Component {
     }
 
     return (
-      <div>
-        <span>招聘职位</span>
-        <span>清空</span>
+      <div className="menu">
+        <span className="menu-title">招聘职位</span>
+        <a href="#" className="clear-button" onClick={this.onCheckAllChange}>清空</a>
         <ul>
-          <li>
-            <input name="option" type="checkbox" />Option 1
-            <ul key="sub1">
-              <li key="1"><input name="opt" type="checkbox" />Option 1</li>
-              <li key="2"><input name="opt" type="checkbox" />Option 2</li>
-              <li key="3"><input name="opt" type="checkbox" />Option 3</li>
-              <li key="4"><input name="opt" type="checkbox" />Option 4</li>
-            </ul>
-          </li>
+          <SubMenu  />
           <li>
             <input name="option" type="checkbox" />Option 1
             <ul>
