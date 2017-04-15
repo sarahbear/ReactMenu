@@ -1,5 +1,6 @@
 // varible
 $layoutColor: #20252c;
+$siderBackgroundColor: #607D8B;
 
 .header {
   position: fixed;
@@ -36,7 +37,7 @@ $layoutColor: #20252c;
   top: 64px;
   left: 0;
   width: 224px;
-  background-color: rgba(28, 43, 54, 1);
+  background-color: $siderBackgroundColor;
   overflow: visible;
   padding-bottom: 24px;
   height: 100%;

@@ -1,16 +1,28 @@
+$menufontSize: 16px;
+
 ol, ul {
   list-style: none;
 }
+input[type="checkbox"] {
+  font-size: 20px;
+}
+
 .menu {
-  margin-left: 20px;
+  padding: 20px;
   .menu-title {
     color: #fff;
+    font-size: $menufontSize;
+    height: 25px;
+    line-height: 25px;
   }
 
   .clear-button {
+    font-size: 14px;
+    height: 25px;
+    line-height: 25px;
     position: absolute;
-    right: 20px;
-    width: 100px;
+    right: 0;
+    width: 50px;
     height: 64px;
   }
 }
