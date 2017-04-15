@@ -25,7 +25,6 @@ class SubMenu extends Component {
           </span>
 
           <span className="submenu-value">{subMenu.value}</span>
-
         </div>
 
         <ul>

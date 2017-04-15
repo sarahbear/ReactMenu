@@ -1,0 +1,31 @@
+$valueBackgroundColor: #516A76;
+$subMenufontSize: 14px;
+
+.submenu {
+	margin-bottom: 20px;
+	color: rgba(255, 255, 255, 0.8);
+	font-size: $subMenufontSize;
+	.row {
+		display: flex;
+		justify-content: space-between;
+	}
+	.submenu-title {
+		padding-left: 10px;
+	}
+	.submenu-value {
+		padding: 3px;
+		border-radius: 11px;
+		background-color: $valueBackgroundColor;
+	}
+	.submenu-item {
+		padding-left: 20px;
+		height: 25px;
+		line-height: 25px;
+		.submenu-checkbox {
+			font-size: 20px;
+		}
+		.submenu-item-title {
+			margin-left: 10px;
+		}
+	}
+}
