@@ -1,5 +1,4 @@
 import React from 'react'
-import { Menu, Dropdown } from 'antd'
 import './Header.scss'
 
 export default class Header extends React.Component {

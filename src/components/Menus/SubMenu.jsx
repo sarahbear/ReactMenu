@@ -1,20 +1,38 @@
-import React from 'react'
+import React, { PropTypes, Component } from 'react'
 
-class SubMenu extends React.Component {
+import './SubMenu.scss'
 
-  handleClick = (e) => {
-    console.log(e.target.value);
-    if (e.target.value === 'on' ) {
-      
-    }
+class SubMenu extends Component {
+
+  handleChange(item) {
+    this.props.onCheck(item);
   }
 
   render () {
+    const { checkedKeys } = this.props;
+
     return (
-      <li>
-        <input name="option" type="checkbox" onClick={this.handleClick} />{this.props.subMenu.label}
-        <ul key="sub1">
-        {this.props.subMenu.children.map( (menuItem, index) => <li key={index}><input name="opt" type="checkbox" />{menuItem.label}</li> )}
+      <li className="submenu">
+        <input
+          name="option"
+          type="checkbox"
+          checked={checkedKeys.has(this.props.subMenu.key) ? 'checked' : false}
+          onChange={()=>this.handleChange(this.props.subMenu)}
+        />
+        {this.props.subMenu.label}
+
+        <ul>
+          {this.props.subMenu.children.map((menuItem, index) =>
+            <li className="submenu-item" key={index}>
+              <input
+                name="opt"
+                type="checkbox"
+                onChange={()=>this.handleChange(menuItem)}
+                checked={checkedKeys.has(menuItem.key) ? 'checked' : false}
+              />
+              {menuItem.label}
+            </li>
+          )}
         </ul>
       </li>
     );
@@ -22,6 +40,7 @@ class SubMenu extends React.Component {
 }
 
 SubMenu.propTypes = {
+  onCheck: PropTypes.func.isRequired
 }
 
 export default SubMenu
