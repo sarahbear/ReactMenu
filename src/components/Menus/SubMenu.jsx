@@ -49,7 +49,9 @@ class SubMenu extends Component {
 }
 
 SubMenu.propTypes = {
-  onCheck: PropTypes.func.isRequired
+  onCheck: PropTypes.func.isRequired,
+  checkedKeys: PropTypes.instanceOf(Set).isRequired,
+  subMenu: PropTypes.object.isRequired
 }
 
 export default SubMenu

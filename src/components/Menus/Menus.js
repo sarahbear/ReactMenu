@@ -7,10 +7,10 @@ import './Menus.scss'
 class Menus extends Component {
 
   state = {
-    checkedKeys: new Set(['0-1-1', '0-1-2'])
+    checkedKeys: new Set()
   }
 
-  // 点击清空
+  // click clear
   onCheckAllChange = (e) => {
     e.preventDefault();
     this.setState({
@@ -27,7 +27,6 @@ class Menus extends Component {
       // if upper menu
       if (checkedKeys.has(item.key)) {
         // already checked, uncheck all child menu
-        console.log('already checked, uncheck all child menu');
         menus[menuIndex].children.forEach((menu) => checkedKeys.delete(menu.key))
         checkedKeys.delete(item.key)
       } else {
