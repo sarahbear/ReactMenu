@@ -1,5 +1,5 @@
 $valueBackgroundColor: #516A76;
-$subMenufontSize: 14px;
+$subMenufontSize: 12px;
 
 .submenu {
 	margin-bottom: 20px;
@@ -9,9 +9,14 @@ $subMenufontSize: 14px;
 		display: flex;
 		justify-content: space-between;
 	}
-	.submenu-title {
-		padding-left: 10px;
+	.submenu-info {
+		.submenu-title, i.fa {
+			padding-left: 10px;
+			font-weight: bold;
+			color: #fff;
+		}
 	}
+
 	.submenu-value {
 		padding: 3px;
 		border-radius: 11px;

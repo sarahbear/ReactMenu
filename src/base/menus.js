@@ -6,6 +6,22 @@ export const menu = [{
     label: 'Mac开发工程师',
     value: '9',
     key: '0-0-0',
+  },{
+    label: 'IOS App测试工程师',
+    value: '17',
+    key: '0-0-1',
+  },{
+    label: 'Android远程控制工程师',
+    value: '61',
+    key: '0-0-2',
+  },{
+    label: 'Web前端工程师',
+    value: '31',
+    key: '0-0-3',
+  },{
+    label: 'Android多媒体软件开发工程师',
+    value: '2',
+    key: '0-0-4',
   }],
 }, {
   label: '产品设计部门',
@@ -23,6 +39,10 @@ export const menu = [{
     label: '视觉设计师',
     value: '42',
     key: '0-1-2',
+  },  {
+    label: '平面设计师',
+    value: '8',
+    key: '0-1-3',
   }],
 }];
 

@@ -10,16 +10,16 @@ input[type="checkbox"] {
     color: #fff;
     font-size: $menufontSize;
     height: 25px;
-    line-height: 25px;
+    line-height: 40px;
   }
 
   .clear-button {
-    font-size: 14px;
-    height: 25px;
-    line-height: 25px;
+    font-size: 12px;
+
+    line-height: 40px;
     position: absolute;
-    right: 0;
-    width: 50px;
+    right: 20px;
+    width: 25px;
     height: 64px;
   }
 }

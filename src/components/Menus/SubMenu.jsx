@@ -11,37 +11,42 @@ class SubMenu extends Component {
   render () {
     const { checkedKeys, subMenu } = this.props;
 
+    const menuItems = subMenu.children.map((menuItem, index) => {
+      return (
+        <li className="submenu-item row" key={index}>
+          <span>
+            <input
+              name="opt"
+              type="checkbox"
+              onChange={()=>this.handleChange(menuItem)}
+              checked={checkedKeys.has(menuItem.key) ? 'checked' : false}
+            />
+            <span className="submenu-item-title">{menuItem.label}</span>
+          </span>
+          <span>{menuItem.value}</span>
+        </li>
+      )
+    })
+
     return (
       <li className="submenu">
         <div className="row">
-          <span>
+          <span className="submenu-info">
             <input
               name="option"
               type="checkbox"
               checked={checkedKeys.has(subMenu.key) ? 'checked' : false}
-              onChange={()=>this.handleChange(subMenu)}
+              onChange={() => this.handleChange(subMenu)}
             />
             <span className="submenu-title">{subMenu.label}</span>
+            <i className="fa fa-angle-down" aria-hidden="true"></i>
           </span>
 
           <span className="submenu-value">{subMenu.value}</span>
         </div>
 
         <ul>
-          {subMenu.children.map((menuItem, index) =>
-            <li className="submenu-item row" key={index}>
-              <span>
-                <input
-                  name="opt"
-                  type="checkbox"
-                  onChange={()=>this.handleChange(menuItem)}
-                  checked={checkedKeys.has(menuItem.key) ? 'checked' : false}
-                />
-                <span className="submenu-item-title">{menuItem.label}</span>
-              </span>
-              <span >{menuItem.value}</span>
-            </li>
-          )}
+          {menuItems}
         </ul>
       </li>
     );

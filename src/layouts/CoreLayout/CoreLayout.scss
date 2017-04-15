@@ -1,6 +1,7 @@
 // varible
 $layoutColor: #20252c;
 $siderBackgroundColor: #607D8B;
+$siderWidth: 260px;
 
 .header {
   position: fixed;
@@ -36,7 +37,7 @@ $siderBackgroundColor: #607D8B;
   position: fixed;
   top: 64px;
   left: 0;
-  width: 224px;
+  width: $siderWidth;
   background-color: $siderBackgroundColor;
   overflow: visible;
   padding-bottom: 24px;
@@ -108,7 +109,7 @@ $siderBackgroundColor: #607D8B;
 
 .layout-aside .aside-action {
   height: 42px;
-  width: 224px;
+  width: $siderWidth;
   position: fixed;
   bottom: 0;
   background-color: rgba(28, 43, 54, 1);
@@ -138,7 +139,7 @@ $siderBackgroundColor: #607D8B;
 }
 
 .layout-aside .layout-main {
-  margin-left: 224px;
+  margin-left: $siderWidth;
   padding: 20px 0 0 20px;
   transition: all 0.3s ease;
 }

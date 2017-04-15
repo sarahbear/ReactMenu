@@ -11,14 +11,14 @@ class Menus extends Component {
   }
 
   // click clear
-  onCheckAllChange = (e) => {
+  handleClickClear = (e) => {
     e.preventDefault();
     this.setState({
       checkedKeys: new Set()
     });
   }
 
-  onCheck = (item) => {
+  handleCheck = (item) => {
     let checkedKeys = this.state.checkedKeys
     const { menus } = this.props
     let menuIndex = _.findIndex(menus, (o) => o.key == item.key )
@@ -59,20 +59,24 @@ class Menus extends Component {
   }
 
   render () {
+    const { menus } = this.props
+    const subMenu = menus.map((subMenu, index) => {
+      return (
+        <SubMenu
+          checkedKeys={this.state.checkedKeys}
+          key={index}
+          subMenu={subMenu}
+          onCheck={this.handleCheck}
+        />
+      )
+    })
 
     return (
       <div className="menu">
         <span className="menu-title">招聘职位</span>
-        <a href="#" className="clear-button" onClick={this.onCheckAllChange}>清空</a>
+        <a href="#" className="clear-button" onClick={this.handleClickClear}>清空</a>
         <ul>
-          {this.props.menus.map((subMenu, index) =>
-            <SubMenu
-              checkedKeys={this.state.checkedKeys}
-              key={index}
-              subMenu={subMenu}
-              onCheck={this.onCheck}
-            />
-          )}
+          {subMenu}
         </ul>
       </div>
     );
