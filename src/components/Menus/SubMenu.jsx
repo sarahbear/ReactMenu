@@ -19,7 +19,7 @@ class SubMenu extends Component {
 
     const menuItems = subMenu.children && subMenu.children.map((menuItem, index) => {
       return (
-        <li className="submenu-item row" key={index}>
+        <li className="submenu-item row" key={menuItem.key}>
           <span>
             <input
               name="opt"

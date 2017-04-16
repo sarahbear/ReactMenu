@@ -69,7 +69,7 @@ class Menus extends Component {
       return (
         <SubMenu
           checkedKeys={this.state.checkedKeys}
-          key={index}
+          key={subMenu.key}
           subMenu={subMenu}
           onCheck={this.handleCheck}
         />
