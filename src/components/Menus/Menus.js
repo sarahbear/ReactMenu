@@ -10,8 +10,12 @@ class Menus extends Component {
     checkedKeys: new Set()
   }
 
+  static propTypes = {
+    menus: PropTypes.array.isRequired
+  }
+
   // click clear
-  handleClickClear = (e) => {
+  handleClearClick = (e) => {
     e.preventDefault();
     this.setState({
       checkedKeys: new Set()
@@ -60,6 +64,7 @@ class Menus extends Component {
 
   render () {
     const { menus } = this.props
+
     const subMenu = menus.map((subMenu, index) => {
       return (
         <SubMenu
@@ -74,17 +79,13 @@ class Menus extends Component {
     return (
       <div className="menu">
         <span className="menu-title">招聘职位</span>
-        <a href="#" className="clear-button" onClick={this.handleClickClear}>清空</a>
+        <a href="#" className="clear-button" onClick={this.handleClearClick}>清空</a>
         <ul>
           {subMenu}
         </ul>
       </div>
     );
   }
-}
-
-Menus.propTypes = {
-  menus: PropTypes.array.isRequired
 }
 
 export default Menus

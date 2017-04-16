@@ -13,7 +13,6 @@ class CoreLayout extends React.Component {
   }
 
   render () {
-    console.log(menus);
     return (
       <div className='core-layout'>
         <div className='header clearfix'>

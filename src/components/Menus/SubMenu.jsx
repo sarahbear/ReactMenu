@@ -4,6 +4,12 @@ import './SubMenu.scss'
 
 class SubMenu extends Component {
 
+  static propTypes = {
+    onCheck: PropTypes.func.isRequired,
+    checkedKeys: PropTypes.instanceOf(Set).isRequired,
+    subMenu: PropTypes.object.isRequired
+  }
+
   handleChange(item) {
     this.props.onCheck(item);
   }
@@ -51,12 +57,6 @@ class SubMenu extends Component {
       </li>
     );
   }
-}
-
-SubMenu.propTypes = {
-  onCheck: PropTypes.func.isRequired,
-  checkedKeys: PropTypes.instanceOf(Set).isRequired,
-  subMenu: PropTypes.object.isRequired
 }
 
 export default SubMenu
