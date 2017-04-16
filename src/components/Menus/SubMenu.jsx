@@ -17,7 +17,7 @@ class SubMenu extends Component {
   render () {
     const { checkedKeys, subMenu } = this.props;
 
-    const menuItems = subMenu.children.map((menuItem, index) => {
+    const menuItems = subMenu.children && subMenu.children.map((menuItem, index) => {
       return (
         <li className="submenu-item row" key={index}>
           <span>
